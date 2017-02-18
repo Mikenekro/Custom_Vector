@@ -27,7 +27,7 @@ namespace std
 			{
 				if (sz <= capacity)
 					return;
-				if (sz > (uint)-1)
+				if (sz > std::numeric_limits<uint>::max())
 					throw std::out_of_range("Vector Capacity limit has been reached.\nMax Capacity is: MAXSIZE_T");
 
 				// allocate a new array on the free store
