@@ -4,13 +4,13 @@ C++
 
 Vector.h Readme
 
-// About
+// About ============================================================================================
 Vector.h is intended to be an alternative to the default vector class that C++ offers us in the standard library. 
 It is not meant to be a replacement or perform better by any means but more as a learning tool to practice some techniques 
 such as generics or operator overloading. During a few testing scenarios in the release build my Vector has performed
 either as good as the default vector or takes a bit more time depending on what the CPU god decides.
 
-// Usage
+// Usage ============================================================================================
 Currently you can use Vector.h much in the same basic ways you can use the normal vector class in C++. It supports Initialization lists,
 has a built in iterator class, can use brackets to access an item in the Vector, etc. and also has some other functionality that the
 normal vector class does not have. This extra functionality may require some extra work on the programmers end but nothing that
@@ -55,7 +55,7 @@ Here are some included uses for the Vector class:
 
 
 
-// Requirements
+// Requirements ============================================================================================
 I put Vector.h in the "std"andard namespace to easily remember. 
 The only requirements to use Vector.h are:
 1. The obvious include statements
