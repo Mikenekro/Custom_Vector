@@ -188,7 +188,7 @@ namespace std
 			Reset(s);
 		}
 		// Copy Constructor
-		Vector(const Vector &obj)
+		Vector(const Vector<T> &obj)
 		{
 			element[] = new T[obj.Size()];
 			
