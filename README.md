@@ -74,8 +74,8 @@ Here are is some basic code for using Vector.h with a custom class:
 {% highlight c++ %}
 // Person class you want to store in Vector
 
-class Person
-{
+class Person{
+
     std::string name;
 public:
     Person() { name = "Mike"; }
@@ -106,8 +106,8 @@ public:
 
 using namespace std;
 
-void main()
-{
+void main(){
+
     Vector<Person> people { Person(), Person2("Allen Pearson"), Person("Jim Buck"), Person("Saad Yousuf") };
 
     for (Vector<Person>::iterator it = people.Begin(); it < people.End(); ++it)
