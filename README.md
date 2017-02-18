@@ -71,7 +71,7 @@ Using custom classes with Vector.h is as easy as using the default vector class.
 
 Here are is some basic code for using Vector.h with a custom class:
 
-'''cpp
+{% highlight c++ %}
 // Person class you want to store in Vector
 class Person
 {
@@ -94,9 +94,9 @@ public:
 		return isEqual;
 	}
 };
-'''
+{% endhighlight %}
 
-'''cpp
+{% highlight c++ %}
 // Place this in your main file
 #include < iostream >
 #include < string >
@@ -141,7 +141,7 @@ void main()
 	system("pause");
     return 0;
 }
-'''
+{% endhighlight %}
 
 
 
