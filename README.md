@@ -18,9 +18,9 @@ is complicated (See Requirements for details).
 
 Here are some included uses for the Vector class:
 
-"Initialization":   Vector<<int>> vec1 { 35, 12, 12, 23, 54, 23 }; // Initializes Vector of ints
+"Initialization":   Vector< int > vec1 { 35, 12, 12, 23, 54, 23 }; // Initializes Vector of ints
 
-"Iteration":        for (Vector<<int>>::iterator it = vec1.Begin(); it < vec1.End(); ++it) 
+"Iteration":        for (Vector< int >::iterator it = vec1.Begin(); it < vec1.End(); ++it) 
                     { cout << it << " "; } // displays each int in Vector
 
 "Gets":         int *pos = vec1.Gets(12); // Returns a pointer array of each position in vec1 containing "12" (NOTE: The first value in pos is the number of items in the array)
