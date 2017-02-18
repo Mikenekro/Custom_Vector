@@ -434,7 +434,7 @@ namespace std
 					if (i == size-1 && firstRun)
 					{
 						arr = new int[num];
-						arr[0] = num+1;
+						arr[0] = num;
 						i = 0;
 						num = 1;
 						firstRun = !firstRun;
@@ -569,11 +569,11 @@ namespace std
 				int *pos = Gets(item);
 
 				// Remove each position from the array
-				for (int i = 1; i < pos[0]; ++i)
+				for (int i = 1; i <= pos[0]; ++i)
 				{
 					Pop_At(pos[i]);
 					removed++;
-					if (i < pos[0]-1)
+					if (i < pos[0])
 						pos[i + 1] -= removed;
 				}
 
