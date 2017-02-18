@@ -71,7 +71,7 @@ Using custom classes with Vector.h is as easy as using the default vector class.
 
 Here are is some basic code for using Vector.h with a custom class:
 
-'''C++
+'''cpp
 class Person
 {
 	std::string name;
@@ -93,7 +93,9 @@ public:
 		return isEqual;
 	}
 };
+'''
 
+'''cpp
 #include < iostream >
 #include < string >
 #include "Vector.h"
