@@ -94,8 +94,8 @@ public:
 	}
 };
 
-#include <iostream>
-#include <string>
+#include < iostream >
+#include < string >
 #include "Vector.h"
 
 using namespace std;
