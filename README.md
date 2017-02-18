@@ -72,6 +72,7 @@ Using custom classes with Vector.h is as easy as using the default vector class.
 Here are is some basic code for using Vector.h with a custom class:
 
 '''cpp
+// Person class you want to store in Vector
 class Person
 {
 	std::string name;
@@ -96,6 +97,7 @@ public:
 '''
 
 '''cpp
+// Place this in your main file
 #include < iostream >
 #include < string >
 #include "Vector.h"
