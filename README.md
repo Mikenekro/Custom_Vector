@@ -73,31 +73,33 @@ Here are is some basic code for using Vector.h with a custom class:
 
 {% highlight c++ %}
 // Person class you want to store in Vector
+
 class Person
 {
-	std::string name;
+    std::string name;
 public:
-	Person() { name = "Mike"; }
-	Person(string n) { name = n; }
-	
-	std::string getName() { return name; }
-	void setName(std::string n) { name = n; }
-	
-	// Equality Operator Overload (for "Gets" and "Pops")
-	const bool operator==(Person& right) const
-	{
-		bool isEqual = false;
-		
-		if (name == right.getName())
-			isEqual = true;
-	
-		return isEqual;
-	}
+    Person() { name = "Mike"; }
+    Person(string n) { name = n; }
+
+    std::string getName() { return name; }
+    void setName(std::string n) { name = n; }
+
+    // Equality Operator Overload (for "Gets" and "Pops")
+    const bool operator==(Person& right) const
+    {
+        bool isEqual = false;
+
+        if (name == right.getName())
+            isEqual = true;
+
+        return isEqual;
+    }
 };
 {% endhighlight %}
 
 {% highlight c++ %}
 // Place this in your main file
+
 #include < iostream >
 #include < string >
 #include "Vector.h"
@@ -106,39 +108,39 @@ using namespace std;
 
 void main()
 {
-	Vector<Person> people { Person(), Person2("Allen Pearson"), Person("Jim Buck"), Person("Saad Yousuf") };
+    Vector<Person> people { Person(), Person2("Allen Pearson"), Person("Jim Buck"), Person("Saad Yousuf") };
 
-	for (Vector<Person>::iterator it = people.Begin(); it < people.End(); ++it)
-	{
-		cout << it->getName() << ", ";
-	}
-	cout << endl;
+    for (Vector<Person>::iterator it = people.Begin(); it < people.End(); ++it)
+    {
+        cout << it->getName() << ", ";
+    }
+    cout << endl;
 
-	people.Push_Back(Person("Dave"));
-	people.Insert(Person("Dave"), 5);
-	
-	cout << people.At(4).getName() << ", ";
-	cout << people.At(5).getName() << endl;
+    people.Push_Back(Person("Dave"));
+    people.Insert(Person("Dave"), 5);
 
-	// Gets each position of the person in the Person Class (As per the Operator Overload in the Person Class)
-	int *pos = people.Gets(people[4]);
+    cout << people.At(4).getName() << ", ";
+    cout << people.At(5).getName() << endl;
 
-	// NOTE: The following "cout" and "for" loop is the correct way to use the pointer returned by "Gets()"
-	cout << "Number of " << people[5].getName() << "'s in the Vector: " << pos[0] << endl;
-	for (int i = 1; i <= pos[0]; ++i)
-	{
-		cout << pos[i] << " in the Vector is " << people[pos[i]].getName() << endl; // Display each person at the position
-	}
+    // Gets each position of the person in the Person Class (As per the Operator Overload in the Person Class)
+    int *pos = people.Gets(people[4]);
 
-	// Removes each of the people with the same name (As per the Operator Overload in the Person Class)
-	people.Pops(people.At(pos[1]));
+    // NOTE: The following "cout" and "for" loop is the correct way to use the pointer returned by "Gets()"
+    cout << "Number of " << people[5].getName() << "'s in the Vector: " << pos[0] << endl;
+    for (int i = 1; i <= pos[0]; ++i)
+    {
+        cout << pos[i] << " in the Vector is " << people[pos[i]].getName() << endl; // Display each person at the position
+    }
 
-	for (int i = 0; i < (int)people.Size(); ++i)
-	{
-		cout << people[i].getName() << endl;
-	}
+    // Removes each of the people with the same name (As per the Operator Overload in the Person Class)
+    people.Pops(people.At(pos[1]));
 
-	system("pause");
+    for (int i = 0; i < (int)people.Size(); ++i)
+    {
+        cout << people[i].getName() << endl;
+    }
+
+    system("pause");
     return 0;
 }
 {% endhighlight %}
