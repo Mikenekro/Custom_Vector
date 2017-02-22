@@ -4,13 +4,13 @@ C++
 
 Vector.h Readme
 
-// About ============================================================================================
+// About =================================================================================
 Vector.h is intended to be an alternative to the default vector class that C++ offers us in the standard library. 
 It is not meant to be a replacement or perform better by any means but more as a learning tool to practice some techniques 
 such as generics or operator overloading. During a few testing scenarios in the release build my Vector has performed
 either as good as the default vector or takes a bit more time depending on what the CPU god decides.
 
-// Usage ============================================================================================
+// Usage =================================================================================
 Currently you can use Vector.h much in the same basic ways you can use the normal vector class in C++. It supports Initialization lists,
 has a built in iterator class, can use brackets to access an item in the Vector, etc. and also has some other functionality that the
 normal vector class does not have. This extra functionality may require some extra work on the programmers end but nothing that
@@ -27,11 +27,11 @@ Here are some included uses for the Vector class:
 
 "Pops":         vec1.Pops(12); // Removes every occurence of "12" from the Vector
 
-"Pop_Back":     vec1.Pop_Back(); // Removes the element from the end of the Cector (23 in this case)
+"Pop_Back":     vec1.Pop_Back(); // Removes the element from the end of the Vector (23 in this case)
 
 "Pop":          vec1.Pop(23); // Removes the first occurence of the value found in the Vector
 
-"Pop_At":       vec1.Pop_At(1); // Removes the element at the indicates position in the Vector
+"Pop_At":       vec1.Pop_At(1); // Removes the element at the indicated position in the Vector
 
 "Insert":       vec1.Insert(25, 2); // Inserts an element (25) in the indicated position (2)
 
@@ -55,8 +55,8 @@ Here are some included uses for the Vector class:
 
 
 
-// Requirements ============================================================================================
-I put Vector.h in the "std"andard namespace to easily remember. 
+// Requirements =================================================================================
+I put Vector.h in the standard namespace to easily remember. 
 The only requirements to use Vector.h are:
 1. The obvious include statements
 
@@ -66,12 +66,13 @@ of your choice from your class. This is ONLY needed if you wish to use the "Pops
 NOTE: This is NOT needed for basic data types such as string, int, double, etc. You ONLY need to add equality operator overloading
 for custom classes you want to access "Pops" and "Gets"
 
-// Using Custom Classes ============================================================================================
+// Using Custom Classes =================================================================================
 Using custom classes with Vector.h is as easy as using the default vector class. The only difference is with the "Gets" and "Pops" functions.
 
 Here are is some basic code for using Vector.h with a custom class:
 
-{% highlight c++ %}
+'''cpp
+
 // Person class you want to store in Vector
 
 class Person{
@@ -95,9 +96,11 @@ public:
         return isEqual;
     }
 };
-{% endhighlight %}
 
-{% highlight c++ %}
+'''
+
+'''cpp
+
 // Place this in your main file
 
 #include < iostream >
@@ -143,7 +146,8 @@ void main(){
     system("pause");
     return 0;
 }
-{% endhighlight %}
+
+'''
 
 
 
