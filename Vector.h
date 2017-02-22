@@ -267,6 +267,7 @@ namespace std
 		} 
 
 		// Plus Equals Operator
+		// Adds each element from the "a" vector to the current vector
 		Vector<T>& operator+=(const Vector<T>& a) 
 		{
 			T* p = new T[size + a.Size()];
@@ -283,20 +284,21 @@ namespace std
 			return *this;
 		}
 
-		// Add One Operator
+		// Add One to the current Vector Size
 		const Vector<T>& operator++() 
 		{
 			Push_Back(0);
 			return *this;
 		}
 
-		// Minus One Operator
+		// Minus One from the current Vector Size
 		const Vector<T>& operator--() 
 		{
 			size -= 1;
 			return *this;
 		}
 
+		// Add each element between two Vectors (Must be same size)
 		const Vector<T> operator+(const Vector<T>& a) 
 		{
 			if (size != a.Size())
@@ -310,7 +312,8 @@ namespace std
 			return v;
 		}
 
-		const Vector& operator+(T& x) 
+		// Adds an element to the end of a Vector
+		const Vector<T>& operator+(T& x) 
 		{
 			Push_Back(x);
 			return *this;
