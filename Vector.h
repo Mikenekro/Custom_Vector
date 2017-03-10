@@ -351,6 +351,16 @@ namespace std
 			return *this;
 		}
 
+		// Adds the right Vectors elements to the left Vectors elements
+		// Ex. vec = vec2 (1, 2, 3) + vec3 (4, 5, 6); which makes vec = (1, 2, 3, 4 ,5 ,6)
+		const Vector<T>& operator+(Vector<T>& x)
+		{
+			for (int i = 0; i < x.size; ++i)
+				Push_Back(x[i]);
+
+			return *this;
+		}
+
 		// Returns the size of this vector (starting at 1)
 		const uint Size() const
 		{
@@ -628,7 +638,7 @@ namespace std
 				{
 					// Loop from the position after this element,
 					// to the last element in the Vector
-					for (int i = pos; (uint)i < size-1; ++i)
+					for (uint i = (uint)pos; i < size-1; ++i)
 					{
 						// Switch the elements
 						T temp = element[i];
