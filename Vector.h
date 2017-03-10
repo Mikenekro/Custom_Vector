@@ -164,6 +164,21 @@ namespace std
 				++i;
 			}
 		}
+		// Private reset constructor for Vectors
+		void Reset(const Vector<T> &s)
+		{
+			size = s.Size();
+			capacity = 10;
+			int i = 0;
+
+			while (capacity < size)
+				capacity *= 2;
+
+			element = new T[capacity];
+
+			for (i = 0; i < s.size; ++i)
+				element[i] = s[i];
+		}
 
 	public:
 
@@ -190,9 +205,11 @@ namespace std
 		// Copy Constructor
 		Vector(const Vector<T> &obj)
 		{
-			element[] = new T[obj.Size()];
+			element = new T[obj.size];
+			size = obj.size;
+			capacity = obj.capacity;
 			
-			for (int i = 0; i < obj.Size(); ++i)
+			for (uint i = 0; i < obj.size; ++i)
 				element[i] = obj[i];
 		}
 		// Free up resources when Vector is lost
@@ -252,11 +269,11 @@ namespace std
 		// Equality Operator
 		const bool operator==(Vector<T>& right) const 
 		{ 
-			if (Size() != right.Size())
+			if (size != right.size)
 				return false;
 			else 
 			{
-				for (int i = 0; i < Size(); i++) 
+				for (uint i = 0; i < Size(); i++) 
 				{ 
 					if (element[i] != right[i])
 						return false;
@@ -284,32 +301,47 @@ namespace std
 			return *this;
 		}
 
-		// Add One to the current Vector Size
-		const Vector<T>& operator++() 
+		// Plus Equals Operator
+		// Adds an element of type T to the end of the Vector
+		Vector<T>& operator+=(const T a)
 		{
-			Push_Back(0);
+			if (size + 1 >= capacity)
+				allocate(2 * capacity);
+
+			element[size] = a;
+			size++;
+
 			return *this;
 		}
 
-		// Minus One from the current Vector Size
+		// (PREFIX) Add One to the current Vector Size
+		const Vector<T>& operator++() 
+		{
+			T item;
+			Push_Back(item);
+			return *this;
+		}
+		// (POSTFIX) Add One to the current Vector Size
+		const Vector<T>& operator++(int junk)
+		{
+			Vector<T> i = *this;
+			T item;
+			Push_Back(item);
+			return i;
+		}
+
+		// (PREFIX) Minus One Element from the current Vector
 		const Vector<T>& operator--() 
 		{
 			size -= 1;
 			return *this;
 		}
-
-		// Add each element between two Vectors (Must be same size)
-		const Vector<T> operator+(const Vector<T>& a) 
+		// (POSTFIX) Minus One Element from the current Vector
+		const Vector<T>& operator--(int junk)
 		{
-			if (size != a.Size())
-				return NULL;
-
-			Vector<T> v = size;
-
-			for (int i = 0; i < size; ++i)
-				v[i] = element[i] + a[i];
-
-			return v;
+			Vector<T> i = *this;
+			size -= 1;
+			return i;
 		}
 
 		// Adds an element to the end of a Vector
@@ -394,7 +426,7 @@ namespace std
 
 			try
 			{
-				for (int i = 0; i < size; ++i)
+				for (uint i = 0; i < size; ++i)
 				{
 					if (element[i] == item)
 					{
