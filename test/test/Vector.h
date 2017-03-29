@@ -387,7 +387,7 @@ namespace std
 		}
 
 		// Sets the position "pos" to the value of "item"
-		void Set(uint pos, T &item)
+		void Set(uint pos, const T &item)
 		{
 			try
 			{
@@ -430,7 +430,7 @@ namespace std
 
 		// Returns the position in the Vector of first found value of item
 		// NOTE: Returns -1 if the element was not found
-		int Get(T &item)
+		int Get(const T &item)
 		{
 			int pos = -1;
 
@@ -456,7 +456,7 @@ namespace std
 		// Gets will return a pointer containing the length of the array in the first position and each position in the current vector where this item is found
 		// Ex: if item = 5 and the current Vector = {1, 3, 5, 3, 4, 5, 5, 5},
 		// This function will return {4, 2, 5, 6, 7}
-		int* Gets(T &item)
+		int* Gets(const T &item)
 		{
 			int *arr = new int[1];
 			bool firstRun = true;
@@ -498,7 +498,7 @@ namespace std
 		}
 
 		// Adds an element of Type "item" to the end of the vector
-		void Push_Back(T &&item)
+		void Push_Back(const T &item)
 		{
 			try
 			{
@@ -517,29 +517,10 @@ namespace std
 				std::cout << e.what() << std::endl;
 			}
 		}
-		// Adds an element of Type "item" to the end of the vector
-		void Push_Back(T &item)
-		{
-			try
-			{
-				// Increase the capacity of the Vector if the 
-				// size is at least the same size as capacity
-				if (size >= capacity)
-					allocate(2 * capacity);
 
-				// Set the element at position "size" 
-				// to the item passed in the variable
-				element[size] = item;
-				++size;
-			}
-			catch (const std::exception& e)
-			{
-				std::cout << e.what() << std::endl;
-			}
-		}
 
 		// Adds an element of Type "item" to the position "pos"
-		void Insert(T &item, uint pos)
+		void Insert(const T &item, uint pos)
 		{
 			try
 			{
@@ -587,7 +568,7 @@ namespace std
 		}
 
 		// Removes the first Value found of the item from the Vector
-		void Pop(T &item)
+		void Pop(const T &item)
 		{
 			try
 			{
@@ -604,7 +585,7 @@ namespace std
 		}
 
 		// Removes every occurence of the Value "item" found in the current Vector
-		void Pops(T &item)
+		void Pops(const T &item)
 		{
 			int removed = 0;
 

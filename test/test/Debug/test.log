@@ -1,14 +1,15 @@
 ﻿  test.cpp
-e:\mikeglidden\documents\visual studio 2015\projects\test\test\vector.h(361): warning C4018: '<': signed/unsigned mismatch
-  e:\mikeglidden\documents\visual studio 2015\projects\test\test\vector.h(357): note: while compiling class template member function 'const std::Vector<std::string> &std::Vector<std::string>::operator +(std::Vector<std::string> &)'
-  e:\mikeglidden\documents\visual studio 2015\projects\test\test\test.cpp(96): note: see reference to function template instantiation 'const std::Vector<std::string> &std::Vector<std::string>::operator +(std::Vector<std::string> &)' being compiled
-  e:\mikeglidden\documents\visual studio 2015\projects\test\test\test.cpp(14): note: see reference to class template instantiation 'std::Vector<std::string>' being compiled
-e:\mikeglidden\documents\visual studio 2015\projects\test\test\vector.h(681): warning C4715: 'std::Vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >::Front': not all control paths return a value
-e:\mikeglidden\documents\visual studio 2015\projects\test\test\vector.h(696): warning C4715: 'std::Vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >::Back': not all control paths return a value
-e:\mikeglidden\documents\visual studio 2015\projects\test\test\vector.h(711): warning C4715: 'std::Vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >::First': not all control paths return a value
-e:\mikeglidden\documents\visual studio 2015\projects\test\test\vector.h(726): warning C4715: 'std::Vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >::Last': not all control paths return a value
-e:\mikeglidden\documents\visual studio 2015\projects\test\test\vector.h(330): warning C4172: returning address of local variable or temporary: i
-e:\mikeglidden\documents\visual studio 2015\projects\test\test\vector.h(344): warning C4172: returning address of local variable or temporary: i
-e:\mikeglidden\documents\visual studio 2015\projects\test\test\vector.h(267): warning C4715: 'std::Vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >::operator[]': not all control paths return a value
-  test.vcxproj -> E:\MikeGlidden\Documents\Visual Studio 2015\Projects\test\Debug\test.exe
-  test.vcxproj -> E:\MikeGlidden\Documents\Visual Studio 2015\Projects\test\Debug\test.pdb (Full PDB)
+e:\mikeglidden\documents\github\projects\test\test\test.cpp(79): warning C4018: '<': signed/unsigned mismatch
+e:\mikeglidden\documents\github\projects\test\test\vector.h(358): warning C4018: '<': signed/unsigned mismatch
+  e:\mikeglidden\documents\github\projects\test\test\vector.h(357): note: while compiling class template member function 'const std::Vector<std::string> &std::Vector<std::string>::operator +(std::Vector<std::string> &)'
+  e:\mikeglidden\documents\github\projects\test\test\test.cpp(169): note: see reference to function template instantiation 'const std::Vector<std::string> &std::Vector<std::string>::operator +(std::Vector<std::string> &)' being compiled
+  e:\mikeglidden\documents\github\projects\test\test\test.cpp(57): note: see reference to class template instantiation 'std::Vector<std::string>' being compiled
+e:\mikeglidden\documents\github\projects\test\test\vector.h(659): warning C4715: 'std::Vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >::Front': not all control paths return a value
+e:\mikeglidden\documents\github\projects\test\test\vector.h(674): warning C4715: 'std::Vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >::Back': not all control paths return a value
+e:\mikeglidden\documents\github\projects\test\test\vector.h(689): warning C4715: 'std::Vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >::First': not all control paths return a value
+e:\mikeglidden\documents\github\projects\test\test\vector.h(704): warning C4715: 'std::Vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >::Last': not all control paths return a value
+e:\mikeglidden\documents\github\projects\test\test\vector.h(330): warning C4172: returning address of local variable or temporary: i
+e:\mikeglidden\documents\github\projects\test\test\vector.h(344): warning C4172: returning address of local variable or temporary: i
+e:\mikeglidden\documents\github\projects\test\test\vector.h(267): warning C4715: 'std::Vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >::operator[]': not all control paths return a value
+  test.vcxproj -> E:\MikeGlidden\Documents\GitHub\Projects\test\Debug\test.exe
+  test.vcxproj -> E:\MikeGlidden\Documents\GitHub\Projects\test\Debug\test.pdb (Full PDB)

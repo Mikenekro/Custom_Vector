@@ -9,9 +9,82 @@
 
 using namespace std;
 
+/*
+	By: Mike Glidden
+	Description:
+	This program demonstrates some of the potential uses for my Custom Vector Class header file.
+	It goes over using initialization lists, how to use some functions, iterators, incrementing the vector,
+	and a few other things.
+
+*/
+
+// Test class to demonstrate using Vector with Custom Types
+class TestClass
+{
+public:
+	TestClass();
+	TestClass(int, string, double[2]);
+
+	int val1;
+	string val2;
+	double val3[2];
+	
+
+private:
+
+};
+
+TestClass::TestClass()
+{
+	val1 = 1;
+	val2 = "Random String";
+	val3[0] = 521.231;
+	val3[1] = 2.12;
+	
+}
+
+TestClass::TestClass(int v1, string v2, double v3[2])
+{
+	val1 = v1;
+	val2 = v2;
+	for (int i = 0; i < 2; ++i)
+		val3[i] = v3[i];
+}
+
 int main()
 {
+	// Initialize the Vector "vec" as a string collection with 4 elements 
 	Vector<string> vec{ "one", "two", "Three", "Four" };
+
+	// You can also initialize the vector with any other type (Including custom types)
+	// and do not need to specify an initialization list
+	Vector<int> vecInt = Vector<int>();
+
+	// Adding integers to the vecInt vector
+	vecInt.Push_Back(5);
+	vecInt.Push_Back(23);
+	vecInt.Push_Back(1);
+	vecInt.Insert(2, 0);
+
+	// Demonstrating using Custom Types with Vector Class
+	double dArr[2]{12.32, 34.23};
+	TestClass t1 = TestClass();
+	TestClass t2 = TestClass(500, "Second Object", dArr);
+
+	// Creating a Vector using Custom Types with my Custom Vector header file
+	Vector<TestClass> custTypeCol{ t1, t2 };
+
+	// Outputting the values stored in the Generic Collection
+	cout << "Custom Type Vector Output =========================================" << endl;
+	for (int i = 0; i < custTypeCol.Size(); ++i)
+	{
+		cout << "Integer Value: " << custTypeCol[i].val1 << ", String Value: " << custTypeCol[i].val2 << ", Double Array:";
+		for (int j = 0; j < 2; ++j)
+			cout << " At " << j << ": " << custTypeCol[i].val3[j];
+
+		cout << endl;
+	}
+
 	int i = 0;
 
 	vec.Push_Back("Five");
